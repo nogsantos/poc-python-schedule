@@ -21,9 +21,7 @@ def service():
 
 @patch("run.AppScheduler.add_schedules")
 @patch("run.schedule.run_pending")
-def test_scheduler_called_add_run_pending(
-    run_pending, add_schedules, service
-):
+def test_scheduler_called_add_run_pending(run_pending, add_schedules, service):
     service.runner()
 
     run_pending.assert_called_once()
@@ -48,7 +46,7 @@ def test_scheduler_at_specific_day_1(dispatch, scheduler):
         event_type="process.every.day.minuts",
         service_name="scheduler",
         event_data={"some_data": "in especific day"},
-        days=[1, 2, 3]
+        days=[1, 2, 3],
     )
 
     dispatch.assert_called_once()
@@ -61,7 +59,7 @@ def test_scheduler_at_specific_day_2(dispatch, scheduler):
         event_type="process.every.day.minuts",
         service_name="scheduler",
         event_data={"some_data": "in especific day"},
-        days=[1, 2, 3]
+        days=[1, 2, 3],
     )
 
     dispatch.assert_called_once()
@@ -74,7 +72,7 @@ def test_scheduler_not_called_at_day_out_of_range(dispatch, scheduler):
         event_type="process.every.day.minuts",
         service_name="scheduler",
         event_data={"some_data": "in especific day"},
-        days=[1, 2, 3]
+        days=[1, 2, 3],
     )
 
     dispatch.assert_not_called()
