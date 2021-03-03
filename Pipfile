@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+schedule = "*"
+
+
+[dev-packages]
+black = "*"
+flake8 = "*"
+ipython = "==7.8.0"
+pytest = "*"
+freezegun = "*"
+
+
+[pipenv]
+allow_prereleases = true
